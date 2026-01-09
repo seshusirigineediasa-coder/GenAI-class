@@ -269,10 +269,3 @@ Parallelism is a key factor behind the efficiency and power of modern Large Lang
 - Gemini  
 
 By combining parallel processing with transformer architecture, these models significantly outperform older sequential approaches in speed, scale, and capability.
-
-
-Deep learning is an advanced form of neural networks that uses many layers to solve complex problems.  
-
-Neural networks are suitable when data and complexity are limited.  
-
-Deep learning is preferred when data is large and high accuracy is required.
