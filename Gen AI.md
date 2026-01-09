@@ -100,13 +100,13 @@ This task requires many layers, which is why it is considered deep learning.
 
 ## Summary
 
-A neural network is a brain-inspired model that learns patterns from data and works well for simpler problems.  
+- A neural network is a brain-inspired model that learns patterns from data and works well for simpler problems.  
 
-Deep learning is an advanced form of neural networks that uses many layers to solve complex problems.  
+- Deep learning is an advanced form of neural networks that uses many layers to solve complex problems.  
 
-Neural networks are suitable when data and complexity are limited.  
+- Neural networks are suitable when data and complexity are limited.  
 
-Deep learning is preferred when data is large and high accuracy is required.
+- Deep learning is preferred when data is large and high accuracy is required.
 
 
 # 📅 DAY 2 — Tokens, Transformers, and Parallelism
