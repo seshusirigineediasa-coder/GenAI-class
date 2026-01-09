@@ -1,9 +1,28 @@
+# Artificial Intelligence — Day 1
+
+## What is Human Intelligence?
+
+Human intelligence refers to the natural mental ability of humans to think, understand, learn, reason, and solve problems effectively.  
+It includes creativity, decision-making skills, emotional awareness, and the ability to adapt to new and changing situations.
+
+Human intelligence is shaped by several factors, including:
+
+- Biological functioning of the brain  
+- Life experiences  
+- Surrounding environment  
+- Cultural background  
+
+Unlike machines, human intelligence is flexible, conscious, and multi-dimensional.  
+It enables effective communication, social interaction, and innovation, allowing humans to function and evolve in the real world.
+
+---
+
 # Neural Networks and Deep Learning
 
 ## What is a Neural Network?
 
 A Neural Network (NN) is a computer model inspired by the human brain.  
-Just like our brain has neurons that pass signals, a neural network has artificial neurons that process data and learn patterns.
+Just like the human brain has neurons that pass signals, a neural network contains artificial neurons that process data and learn patterns.
 
 ---
 
