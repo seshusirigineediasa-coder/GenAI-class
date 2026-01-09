@@ -107,3 +107,172 @@ Deep learning is an advanced form of neural networks that uses many layers to so
 Neural networks are suitable when data and complexity are limited.  
 
 Deep learning is preferred when data is large and high accuracy is required.
+
+
+# 📅 DAY 2 — Tokens, Transformers, and Parallelism
+
+## What Is a Token?
+
+In large language models, a token is the smallest piece of text that the model can recognize and process.  
+Instead of reading full sentences like humans, models first split text into tokens.
+
+A token may represent:
+- A complete word  
+- A fragment of a word  
+- Punctuation marks  
+- Spaces or special characters  
+
+### Example
+
+Sentence:  
+“Apple is green.”
+
+After tokenization, it may become:  
+Apple, is, green, . → **4 tokens**
+
+Each token is mapped to a numerical value such as:  
+[5271, 181, 4490, 13]
+
+Since language models operate on numbers, all text is converted into numeric form before processing.  
+While generating responses, the model predicts one token at a time using previously generated tokens.
+
+Tokenization directly impacts:
+- Processing cost  
+- Response speed  
+- Context length  
+- Multilingual support  
+
+Modern LLMs have defined token limits (for example, 128K tokens), which decide how much information the model can keep in memory during a conversation.
+
+---
+
+## What Is a Transformer?
+
+A transformer is a powerful deep learning architecture designed for understanding and producing human language.  
+Unlike earlier models, transformers analyze all words in a sentence simultaneously.
+
+Their key mechanism is **self-attention**, which allows the model to determine how strongly each word relates to others in the sentence.
+
+### Example
+
+Sentence:  
+“The dog chased the cat because it was scared.”
+
+A transformer can correctly understand that the word “it” refers to the cat.
+
+Before processing, transformers convert sentences into tokens and then into numerical representations.
+
+### Example Task
+
+Input: "Good morning"  
+Output: "Bonjour"
+
+Transformers form the backbone of many modern AI systems, including:
+- ChatGPT  
+- BERT  
+- GPT-4  
+- Gemini  
+- Claude  
+
+They are highly effective for tasks such as text generation, question answering, reasoning, and even multimodal processing like images and audio.
+
+---
+
+## Tokenization Across Different Language Models
+
+Large language models do not interpret text as complete sentences.  
+They first break text into smaller tokens.
+
+### Example
+
+Sentence:  
+“Artificial intelligence is powerful.”
+
+Possible tokenization:  
+Artificial, intelligence, is, power, ful, .
+
+Different models use different tokenization techniques:
+
+- **GPT Models (OpenAI)** use Byte Pair Encoding (BPE)  
+  Example:  
+  Internationalization → Intern, ation, al, ization  
+
+- **Google Gemini / T5** use SentencePiece  
+  Example:  
+  Artificial Intelligence → ▁Artificial, ▁Intel, ligence  
+
+- **Meta LLaMA** uses a multilingual BPE variant  
+  Example:  
+  Computational → Compute, ation, al  
+
+- **Anthropic Claude** uses an optimized BPE approach  
+  Designed for efficiently handling long documents  
+
+- **Chinese, Japanese, and Korean Models** often use character-based tokenization  
+  Example (Chinese):  
+  我爱你 → 我, 爱, 你  
+
+---
+
+## What Is Parallelism?
+
+Parallelism is the ability to perform multiple operations at the same time instead of executing them sequentially.  
+In modern AI systems, especially transformers, parallelism enables the simultaneous processing of many tokens, greatly improving performance.
+
+---
+
+## Real-World Example: Exam Paper Evaluation
+
+Suppose 1,000 exam papers need grading.
+
+### Sequential Method (Traditional)
+- One teacher grades all papers alone  
+- Papers are evaluated one after another  
+- The total process takes a very long time  
+
+### Parallel Method (Efficient)
+- The task is divided among 100 teachers  
+- Each teacher grades 10 papers at the same time  
+- The entire workload finishes much faster  
+
+---
+
+## Parallelism in AI Models
+
+Earlier neural architectures such as RNNs and LSTMs processed sentences word-by-word.  
+Each step depended on the previous one, leading to slower training and inference.
+
+---
+
+## Parallel Processing in Transformers
+
+Transformers changed this by enabling all tokens in a sentence to be processed at once.
+
+Example sentence:  
+“Artificial intelligence is transforming the world.”
+
+Rather than analyzing words sequentially, transformers examine all tokens simultaneously, allowing better understanding of relationships within the sentence.
+
+This parallel execution makes modern AI systems:
+- Faster  
+- More scalable  
+- Capable of learning from massive datasets  
+
+---
+
+## Conclusion
+
+Parallelism is a key factor behind the efficiency and power of modern Large Language Models such as:
+- GPT  
+- BERT  
+- Claude  
+- Gemini  
+
+By combining parallel processing with transformer architecture, these models significantly outperform older sequential approaches in speed, scale, and capability.
+
+
+Deep learning is an advanced form of neural networks that uses many layers to solve complex problems.  
+
+Neural networks are suitable when data and complexity are limited.  
+
+Deep learning is preferred when data is large and high accuracy is required.
