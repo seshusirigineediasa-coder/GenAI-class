@@ -275,11 +275,11 @@ By combining parallel processing with transformer architecture, these models sig
 
 ## What Are Embeddings?
 
-Embeddings are numerical representations of data that capture its meaning and relationships.  
-They convert words, sentences, images, or other data into vectors of numbers so that machines can understand similarities and patterns.
+- Embeddings are numerical representations of data that capture its meaning and relationships.  
+- They convert words, sentences, images, or other data into vectors of numbers so that machines can understand similarities and patterns.
 
-Instead of treating data as plain text or raw values, embeddings place similar items closer together in a mathematical space.  
-This allows AI systems to compare meaning rather than exact matches.
+- Instead of treating data as plain text or raw values, embeddings place similar items closer together in a mathematical space.  
+- This allows AI systems to compare meaning rather than exact matches.
 
 For example, the words “king” and “queen” will have embeddings that are close to each other, while “king” and “banana” will be far apart.
 
@@ -343,21 +343,21 @@ This is widely used in face recognition and image search.
 
 ## Use Cases of Embeddings
 
-Embeddings are used in semantic search, where results are based on meaning rather than keywords.  
-They power recommendation systems by finding similar users or items.  
-Chatbots use embeddings to match user questions with relevant answers.  
-Embeddings are essential for document clustering and topic grouping.  
-They are used in sentiment analysis to understand emotional tone.  
-Image and video search rely on embeddings to identify similar visual content.  
-Fraud detection systems use embeddings to identify unusual patterns.
+- Embeddings are used in semantic search, where results are based on meaning rather than keywords.  
+- They power recommendation systems by finding similar users or items.  
+- Chatbots use embeddings to match user questions with relevant answers.  
+- Embeddings are essential for document clustering and topic grouping.  
+- They are used in sentiment analysis to understand emotional tone.  
+- Image and video search rely on embeddings to identify similar visual content.  
+- Fraud detection systems use embeddings to identify unusual patterns.
 
 ---
 
 ## Embeddings in Large Language Models
 
-Large Language Models use embeddings as the first step in understanding text.  
-Input tokens are converted into embeddings before being processed by transformers.  
-Without embeddings, models would not be able to reason about meaning or context.
+- Large Language Models use embeddings as the first step in understanding text.  
+- Input tokens are converted into embeddings before being processed by transformers.  
+- Without embeddings, models would not be able to reason about meaning or context.
 
 Embeddings act as the bridge between raw data and intelligent behavior.
 
@@ -365,8 +365,8 @@ Embeddings act as the bridge between raw data and intelligent behavior.
 
 ## Conclusion
 
-Embeddings transform raw data into meaningful numerical representations that machines can analyze.  
-They allow AI systems to understand similarity, context, and relationships instead of just matching exact values.  
-From search engines to chatbots and recommendation systems, embeddings are a foundational component of modern AI.
+- Embeddings transform raw data into meaningful numerical representations that machines can analyze.  
+- They allow AI systems to understand similarity, context, and relationships instead of just matching exact values.  
+- From search engines to chatbots and recommendation systems, embeddings are a foundational component of modern AI.
 
 In simple terms, **embeddings are how machines convert meaning into numbers**.
