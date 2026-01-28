@@ -370,3 +370,221 @@ Embeddings act as the bridge between raw data and intelligent behavior.
 - From search engines to chatbots and recommendation systems, embeddings are a foundational component of modern AI.
 
 In simple terms, **embeddings are how machines convert meaning into numbers**.
+
+
+# Catalogue Intelligence System Using RAG
+
+## Overview
+
+The Catalogue Intelligence System combines a Catalogue Management System (CMS) with Retrieval-Augmented Generation (RAG) to provide accurate, explainable, and context-aware product insights.  
+It is designed to support estimators and designers by transforming raw catalog data into reliable intelligence without hallucinations.
+
+---
+
+## 1️⃣ Data Sources (Real-World Catalog Inputs)
+
+The system ingests multiple types of catalog data commonly used in real-world scenarios:
+
+- PDF-based product catalogs  
+- Product images and reference links  
+- Technical specifications  
+- Pricing information  
+
+These inputs reflect actual data used by estimators and design teams.
+
+---
+
+## 2️⃣ Catalogue Management System (CMS) Ingestion
+
+The CMS ensures data quality, validation, and governance.
+
+### PDF Catalog Processing
+- PDF catalogs are processed using OCR tools to extract text  
+- Extracted content is manually reviewed and validated  
+- SKUs, specifications, and pricing are verified for correctness  
+
+### Price List Processing
+- Price data is uploaded through CSV or Excel files  
+- Stored as structured records to maintain a single source of truth  
+
+### Images and Product Links
+- Product images are stored in object storage  
+- Image URLs and product reference links are stored in the database  
+
+All catalog components are linked using a SKU-based reference model.
+
+The CMS ensures clean, trusted, and well-governed data.
+
+---
+
+## 3️⃣ Embedding Generation
+
+After validation, catalog content is prepared for semantic retrieval.
+
+- Text content is split into meaningful chunks  
+- Each chunk is converted into embeddings using the MiniLM model  
+- Embeddings are stored in MongoDB Vector Search along with metadata:
+  - SKU  
+  - Tenant ID  
+  - Source (PDF page, link, or document)  
+
+This step enables semantic search across the catalog.
+
+---
+
+## 4️⃣ User Query (Live Question)
+
+Example user query:
+
+> “Which LED panels under ₹5,000 are suitable for outdoor use?”
+
+---
+
+## 5️⃣ RAG Workflow (Answer Generation Process)
+
+The system answers queries using a structured RAG pipeline:
+
+- User query is converted into an embedding  
+- MongoDB performs vector similarity search  
+- Relevant catalog chunks are retrieved  
+- The LLM receives:
+  - The user question  
+  - Retrieved catalog context  
+
+The LLM generates answers strictly based on retrieved data, ensuring factual accuracy.
+
+---
+
+## 6️⃣ Final Output
+
+The system returns a grounded response containing:
+
+- Product name  
+- SKU  
+- Price  
+- Manufacturer or catalog link  
+
+Additional guarantees:
+- Full traceability of information sources  
+- No hallucination, as the LLM does not invent data  
+
+---
+
+## 7️⃣ System Characteristics
+
+The platform is designed to be:
+
+- Scalable  
+- Secure  
+- Multi-tenant  
+
+It supports:
+- **Estimators** by ensuring cost accuracy  
+- **Designers** by enabling efficient product discovery  
+
+---
+
+## 🔄 End-to-End Data Flow
+
+  Websites / PDFs / CSV Files
+  
+  ↓
+  
+  Catalogue Management System (Validated & Structured Data)
+  
+  ↓
+  
+  Text Chunking → Embeddings
+  
+  ↓
+  
+  MongoDB Vector Search
+  
+  ↓
+  
+  RAG (Retrieve + Generate)
+  
+  ↓
+  
+  Grounded and Explainable Answer
+
+
+---
+
+## Technology Stack
+
+### Data Storage
+- **MongoDB Atlas**
+  - Stores structured data (SKU, price, specifications)
+  - Supports vector search for embeddings
+  - Enables tenant-based data isolation  
+
+- **Object Storage (Local File System)**
+  - Stores PDFs and product images
+  - MongoDB stores references as URLs  
+
+---
+
+### Ingestion and Processing
+- **OCR Tools (Tesseract / Textract)**
+  - Extract text from scanned and digital PDFs  
+
+- **Human Validation**
+  - Ensures data correctness and trust  
+
+- **CSV / Excel Processing (Pandas)**
+  - Handles structured price list ingestion
+  - Maintains data integrity  
+
+---
+
+### Embeddings Layer
+- **Model:** `sentence-transformers/all-MiniLM-L6-v2`
+
+**Why MiniLM?**
+- Open-source and free  
+- Lightweight and fast  
+- Strong semantic understanding  
+- Cost-efficient with 384-dimensional vectors  
+
+**Purpose:**  
+Enables semantic search over catalog data.
+
+---
+
+### RAG Orchestration
+- **LangChain**
+  - Text chunking
+  - History-aware query rewriting
+  - Prompt orchestration  
+
+- **MongoDB Vector Search**
+  - Semantic retrieval
+  - Metadata filtering (Tenant ID, SKU)  
+
+---
+
+### LLM for Answer Generation
+- **Groq (LLaMA-3)**
+
+Used only for final answer generation:
+- Fast inference  
+- Low operational cost  
+- Converts retrieved context into human-readable responses  
+
+---
+
+### Security and Configuration
+- **dotenv**
+  - Secure management of API keys and environment variables  
+
+- **Tenant ID Enforcement**
+  - Applied during ingestion and retrieval
+  - Ensures strict data isolation between tenants  
+
+---
+
+## Summary
+
+This Catalogue Intelligence System uses CMS and RAG to deliver accurate, explainable, and scalable catalog insights.  
+By combining validated data, embeddings, vector search, and controlled LLM usage, the system ensures trust, performance, and real-world usability.
